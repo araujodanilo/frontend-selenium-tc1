@@ -1,6 +1,6 @@
 export default function Root() {
   return (
-    <div className="router-root">
+    <div>
       <h1>Hello World</h1>
     </div>
   );
