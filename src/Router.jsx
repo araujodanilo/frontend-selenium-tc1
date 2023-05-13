@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
 //Routes
-import ErrorPage from './error-page';
-import Root from "./routes/root";
+import ErrorPage from './ErrorPage';
+import Root from "./routes/Root";
 
-const router = createBrowserRouter([
+const Router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Root />,
@@ -12,4 +12,4 @@ const router = createBrowserRouter([
 	},
 ]);
 
-export default router
+export default Router;
