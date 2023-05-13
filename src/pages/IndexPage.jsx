@@ -6,8 +6,8 @@ export default IndexPage = () => {
 
             <p>Este é um site que possui como finalidade mostrar registros criminais em aberto</p>
 
-            <button>Visualizar esporte</button>
-            <button>Cadastrar esporte</button>
+            <button>Visualizar registros criminais</button>
+            <button>Cadastrar registro criminal</button>
         </div>
         </>
     )
