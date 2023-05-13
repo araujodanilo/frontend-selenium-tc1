@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from "react-router-dom";
-import router from './router';
+import HeaderLayout from "./layouts/HeaderLayout"
+import FooterLayout from "./layouts/FooterLayout"
+import Router from './Router';
 
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<HeaderLayout />
+			<RouterProvider router={Router} />
+		<FooterLayout />
 	</React.StrictMode>,
 )
