@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 //Routes
 import ErrorPage from './ErrorPage';
 import Root from "./routes/Root";
-import CriminalCasesPage from "./pages/CriminalCasesPage";
+import RegisterOpenCriminalCase from "./routes/RegisterOpenCriminalCase";
 
 const Router = createBrowserRouter([
 	{
@@ -12,8 +12,8 @@ const Router = createBrowserRouter([
 		errorElement: <ErrorPage />
 	},
 	{
-		path: "/criminalCases",
-		element: <CriminalCasesPage />,
+		path: "/register",
+		element: <RegisterOpenCriminalCase />,
 		errorElement: <ErrorPage />
 	}
 ]);
