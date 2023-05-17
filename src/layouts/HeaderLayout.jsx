@@ -3,7 +3,7 @@ const HeaderLayout = () => {
 		<header className="p-3 mb-2 bg-dark text-white">
 			<nav className="navbar bg-dark py-4 ms-5 "  >
 				<a className="navbar-brand text-white" href="/">
-					<img src="/public/imgs/searcher.png" alt="" /> CSI SYSTEM
+					<img src="/imgs/searcher.png" alt="" /> CSI SYSTEM
 				</a>
 				<a className="nav-link text-white" href="/">Registros atuais</a>
 				<a className="nav-link text-white" href="/register">Cadastrar</a>

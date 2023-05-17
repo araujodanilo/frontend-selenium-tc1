@@ -8,7 +8,7 @@ const IndexPage = () => {
 
 				<p className="ms-3">Este é um site que possui como finalidade mostrar registros criminais em aberto</p>
 				<div className="container">
-					<img  src="/public/imgs/board.jpg" alt="Avatar" className="img-button image img-thumbnail border-dark" />
+					<img  src="/imgs/board.jpg" alt="Avatar" className="img-button image img-thumbnail border-dark" />
 					<div className="middle">
 						<div className="text">Visualizar registros</div>
 					</div>
