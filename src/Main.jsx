@@ -5,7 +5,7 @@ import HeaderLayout from "./layouts/HeaderLayout"
 import FooterLayout from "./layouts/FooterLayout"
 import Router from './Router';
 
-import './index.css';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
