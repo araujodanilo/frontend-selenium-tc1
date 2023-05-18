@@ -17,6 +17,15 @@ const OpenCriminalCase = ({ id }) => {
 
 	const [formErrors, setFormErrors] = useState("")
 
+	const setData = () => {
+		return {
+			crime_suspect: crimeSuspect,
+			crime_type: crimeType,
+			crime_location: crimeLocation,
+			crime_date: crimeDate,
+		}
+	}
+
 	const resetForm = () => {
 		setFormErrors([])
 		setCrimeSuspect("")
