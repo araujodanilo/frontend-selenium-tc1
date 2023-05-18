@@ -17,6 +17,14 @@ const OpenCriminalCase = ({ id }) => {
 
 	const [formErrors, setFormErrors] = useState("")
 
+	const resetForm = () => {
+		setFormErrors([])
+		setCrimeSuspect("")
+		setCrimeType("")
+		setCrimeLocation("")
+		setCrimeDate(null)
+	}
+
 	return (
 		<>
 			<form className="d-flex flex-column form-group gap-3" onSubmit={submit}>
