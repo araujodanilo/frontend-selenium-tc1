@@ -31,12 +31,47 @@ const OpenCriminalCase = ({ id }) => {
 		await createOpenCriminalCase(data)
 	}
 
+	const editCrime = () => {
+	}
+
+	const deleteCrime = () => {
+
+	}
+
 	const resetForm = () => {
 		setFormErrors([])
 		setCrimeSuspect("")
 		setCrimeType("")
 		setCrimeLocation("")
 		setCrimeDate(null)
+	}
+
+	const submit = async (e) => {
+		e.preventDefault()
+		setFormErrors([])
+		const data = setData()
+		try {
+			const validation = await createSchema.validate({
+				crimeSuspect,
+				crimeType,
+				crimeLocation,
+				crimeDate
+			}
+				, { abortEarly: false })
+		}
+		catch (err) {
+			const tempFormErrors = {}
+			err.inner.forEach(
+
+				i => {
+					if (i.path) {
+						tempFormErrors[i.path] = i.message;
+					}
+				})
+			setFormErrors(tempFormErrors)
+			return
+		}
+		await registerCrime(data)
 	}
 
 	return (
