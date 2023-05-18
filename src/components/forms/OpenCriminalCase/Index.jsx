@@ -1,4 +1,12 @@
 import { useState } from "react"
+import * as yup from 'yup';
+
+const createSchema = yup.object({
+	crimeSuspect: yup.string().required('Campo obrigatório'),
+	crimeType: yup.string().required('Campo obrigatório'),
+	crimeLocation: yup.string().required('Campo obrigatório'),
+	crimeDate: yup.date().required('Campo obrigatório'),
+});
 
 const OpenCriminalCase = ({ id }) => {
 	const crimeId = id
