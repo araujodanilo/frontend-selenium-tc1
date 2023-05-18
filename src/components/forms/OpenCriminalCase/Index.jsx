@@ -1,5 +1,6 @@
 import { useState } from "react"
 import * as yup from 'yup';
+import { createOpenCriminalCase } from "../../../api/OpenCriminalCaseApi";
 
 const createSchema = yup.object({
 	crimeSuspect: yup.string().required('Campo obrigatório'),
