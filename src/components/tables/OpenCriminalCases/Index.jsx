@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
 
 const OpenCriminalCasesTable = () => {
-    const [criminalCases, setCriminalCases] = useState([]);
+	const [criminalCases, setCriminalCases] = useState([]);
+
+	const loadingData = async () => {
+		getAllOpenCriminalCase(setCriminalCases)
+	}
 
 	useEffect(() => {
-		fetch("http://localhost:3000/open_criminal_case")
-			.then(response => response.json())
-			.then(data => {
-				setCriminalCases(data);
-			})
+		loadingData()
 	}, []);
 
 	return (
@@ -24,17 +25,17 @@ const OpenCriminalCasesTable = () => {
 					</tr>
 				</thead>
 				<tbody>
-				{criminalCases.map((criminalCase) => {
-					return (
-					<tr key = {criminalCase.id}>
-						<td>{criminalCase.id}</td>
-						<td>{criminalCase.main_suspect}</td>
-						<td>{criminalCase.crime_type}</td>
-						<td>{criminalCase.crime_location}</td>
-						<td>{criminalCase.date}</td>
-					</tr>
-					)
-				})}
+					{criminalCases.map((criminalCase) => {
+						return (
+							<tr key={criminalCase.id}>
+								<td>{criminalCase.id}</td>
+								<td>{criminalCase.main_suspect}</td>
+								<td>{criminalCase.crime_type}</td>
+								<td>{criminalCase.crime_location}</td>
+								<td>{criminalCase.date}</td>
+							</tr>
+						)
+					})}
 				</tbody>
 			</table>
 		</>

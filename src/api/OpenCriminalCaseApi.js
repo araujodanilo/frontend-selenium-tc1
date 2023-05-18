@@ -1,16 +1,16 @@
 const baseUrl = "http://localhost:3000/api/crimes"
 
 
-export const getAllOpenCriminalCase = () => {
-	fetch(`${baseUrl}`, { method: "GET" })
+export const getAllOpenCriminalCase = async (setData) => {
+	await fetch(`${baseUrl}`, { method: "GET" })
 		.then(async response => {
 			console.log("getAllClients status: ", response.status)
-			const data = (await response.json())[0]
-			return data
+			const data = (await response.json())
+			setData(data)
 		})
 }
 
-export const getOneOpenCriminalCase = (id) => {
+export const getOneOpenCriminalCase = async (id) => {
 	fetch(`${baseUrl}/${id}`, { method: "GET" })
 		.then(async response => {
 			const data = (await response.json())
@@ -18,7 +18,7 @@ export const getOneOpenCriminalCase = (id) => {
 		})
 }
 
-export const createOpenCriminalCase = (data) => {
+export const createOpenCriminalCase = async (data) => {
 	fetch(`${baseUrl}`,
 		{
 			method: "POST",
@@ -30,7 +30,7 @@ export const createOpenCriminalCase = (data) => {
 		)
 }
 
-export const updateOpenCriminalCase = (id, data) => {
+export const updateOpenCriminalCase = async (id, data) => {
 	fetch(`${baseUrl}/${id}`,
 		{
 			method: "PATCH",
@@ -39,7 +39,7 @@ export const updateOpenCriminalCase = (id, data) => {
 		})
 }
 
-export const deleteOpenCriminalCase = (id) => {
+export const deleteOpenCriminalCase = async (id) => {
 	fetch(`${baseUrl}/${id}`,
 		{
 			method: "DELETE",
