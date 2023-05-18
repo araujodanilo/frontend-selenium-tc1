@@ -27,6 +27,10 @@ const OpenCriminalCase = ({ id }) => {
 		}
 	}
 
+	const registerCrime = async (data) => {
+		await createOpenCriminalCase(data)
+	}
+
 	const resetForm = () => {
 		setFormErrors([])
 		setCrimeSuspect("")
