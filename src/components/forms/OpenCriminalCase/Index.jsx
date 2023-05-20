@@ -44,7 +44,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				update(id, form)
 			else
 				create(form)
-				window.location.assign("/crimes")
+			window.location.assign("/crimes")
 		}
 	}
 
@@ -55,64 +55,68 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	return (
 		<>
-			<form className="d-flex flex-column form-group gap-3" onSubmit={handleSubmit} onReset={handleReset}>
+			<div className="p-3">
+				<div className="border border-dark"> {/* container em conflico com o css local */}
+					<form className="d-flex flex-column form-group gap-3 m-3" onSubmit={handleSubmit} onReset={handleReset}>
 
-				<div className="d-flex flex-column">
-					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="crimeSuspect">Principal suspeito: </label>
-						<input value={(id && Object.keys(form) != 0) ? form.crimeSuspect : ''} className="form-control" onChange={handleChange} type="text" name="crimeSuspect" />
-					</div>
-					<div className="text-center text-danger">
-						<p>{formErrors.crimeSuspect}</p>
-					</div>
-				</div>
-
-				<div className="d-flex flex-column">
-					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="crimeType">Tipo de crime: </label>
-						<input value={(id && Object.keys(form) != 0) ? form.crimeType : ''} className="form-control" onChange={handleChange} type="text" name="crimeType" />
-					</div>
-					<div className="text-center text-danger">
-						<p>{formErrors.crimeType}</p>
-					</div>
-				</div>
-
-				<div className="d-flex flex-column">
-					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="crimeLocation">Local do crime: </label>
-						<input value={(id && Object.keys(form) != 0) ? form.crimeLocation : ''} className="form-control" onChange={handleChange} type="text" name="crimeLocation" />
-					</div>
-					<div className="text-center text-danger">
-						<p>{formErrors.crimeLocation}</p>
-					</div>
-				</div>
-
-				<div className="d-flex flex-column">
-					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="crimeDate">Data: </label>
-						<input value={(id && Object.keys(form) != 0) ? form.crimeDate : ''} className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
-					</div>
-					<div className="text-center text-danger">
-						<p>{formErrors.crimeDate}</p>
-					</div>
-				</div>
-
-				{
-					(id) ?
-						<div className="d-flex flex-row justify-content-between">
-							<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
-							<input className="btn btn-warning" type="submit" value="Atualizar" />
-						</div>
-						:
-						<div className="d-flex flex-row justify-content-between">
-							<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
-							<div className="gap-2 d-flex">
-								<input className="btn btn-info" type="reset" value="Limpar" />
-								<input className="btn btn-success" type="submit" value="Enviar" />
+						<div className="d-flex flex-column">
+							<div className="d-flex flex-row">
+								<label className="form-label" htmlFor="crimeSuspect">Principal suspeito: </label>
+								<input value={(id && Object.keys(form) != 0) ? form.crimeSuspect : ''} className="form-control" onChange={handleChange} type="text" name="crimeSuspect" />
+							</div>
+							<div className="text-center text-danger">
+								<p>{formErrors.crimeSuspect}</p>
 							</div>
 						</div>
-				}
-			</form>
+
+						<div className="d-flex flex-column">
+							<div className="d-flex flex-row">
+								<label className="form-label" htmlFor="crimeType">Tipo de crime: </label>
+								<input value={(id && Object.keys(form) != 0) ? form.crimeType : ''} className="form-control" onChange={handleChange} type="text" name="crimeType" />
+							</div>
+							<div className="text-center text-danger">
+								<p>{formErrors.crimeType}</p>
+							</div>
+						</div>
+
+						<div className="d-flex flex-column">
+							<div className="d-flex flex-row">
+								<label className="form-label" htmlFor="crimeLocation">Local do crime: </label>
+								<input value={(id && Object.keys(form) != 0) ? form.crimeLocation : ''} className="form-control" onChange={handleChange} type="text" name="crimeLocation" />
+							</div>
+							<div className="text-center text-danger">
+								<p>{formErrors.crimeLocation}</p>
+							</div>
+						</div>
+
+						<div className="d-flex flex-column">
+							<div className="d-flex flex-row">
+								<label className="form-label" htmlFor="crimeDate">Data: </label>
+								<input value={(id && Object.keys(form) != 0) ? form.crimeDate : ''} className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
+							</div>
+							<div className="text-center text-danger">
+								<p>{formErrors.crimeDate}</p>
+							</div>
+						</div>
+
+						{
+							(id) ?
+								<div className="d-flex flex-row justify-content-between">
+									<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
+									<input className="btn btn-warning" type="submit" value="Atualizar" />
+								</div>
+								:
+								<div className="d-flex flex-row justify-content-between">
+									<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
+									<div className="gap-2 d-flex">
+										<input className="btn btn-info" type="reset" value="Limpar" />
+										<input className="btn btn-success" type="submit" value="Enviar" />
+									</div>
+								</div>
+						}
+					</form>
+				</div>
+			</div>
 		</>
 	)
 }
