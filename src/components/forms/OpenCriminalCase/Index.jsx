@@ -10,45 +10,24 @@ const createSchema = yup.object({
 });
 
 const OpenCriminalCaseForm = ({ id }) => {
-	const [crimeSuspect, setCrimeSuspect] = useState("")
-	const [crimeType, setCrimeType] = useState("")
-	const [crimeLocation, setCrimeLocation] = useState("")
-	const [crimeDate, setCrimeDate] = useState(null)
-
+	const [form, setForm] = useState({})
 	const [formErrors, setFormErrors] = useState("")
 
-	const setData = () => {
-		return {
-			crime_suspect: crimeSuspect,
-			crime_type: crimeType,
-			crime_location: crimeLocation,
-			crime_date: crimeDate,
-		}
-	}
+	const handleChange = (e) => { setForm(values => ({ ...values, [e.target.name]: e.target.value })) }
 
 	const registerCrime = async (data) => {
 		await createOpenCriminalCase(data)
 	}
 
 	const handleReset = () => {
-		setFormErrors([])
-		setCrimeSuspect("")
-		setCrimeType("")
-		setCrimeLocation("")
-		setCrimeDate(null)
+		setForm({})
 	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setFormErrors([])
-		const data = setData()
 		try {
-			const validation = await createSchema.validate({
-				crimeSuspect,
-				crimeType,
-				crimeLocation,
-				crimeDate
-			}
+			const validation = await createSchema.validate(form
 				, { abortEarly: false })
 		}
 		catch (err) {
@@ -73,7 +52,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="suspeito">Principal suspeito: </label>
-						<input className="form-control" type="text" value={crimeSuspect} onChange={(e) => setCrimeSuspect(e.target.value)} />
+						<input className="form-control" onChange={handleChange} type="text" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeSuspect}</p>
@@ -83,7 +62,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="tipoCrime">Tipo de crime: </label>
-						<input className="form-control" type="text" value={crimeType} onChange={(e) => setCrimeType(e.target.value)} />
+						<input className="form-control" onChange={handleChange} type="text" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeType}</p>
@@ -93,7 +72,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="localCrime">Local do crime: </label>
-						<input className="form-control" type="text" value={crimeLocation} onChange={(e) => setCrimeLocation(e.target.value)} />
+						<input className="form-control" onChange={handleChange} type="text" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeLocation}</p>
@@ -103,7 +82,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="data">Data: </label>
-						<input className="form-control" type="datetime-local" value={crimeDate} onChange={(e) => setCrimeDate(e.target.value)} />
+						<input className="form-control" onChange={handleChange} type="datetime-local" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeDate}</p>
