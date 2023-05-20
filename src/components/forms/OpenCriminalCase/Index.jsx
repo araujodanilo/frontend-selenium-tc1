@@ -9,8 +9,7 @@ const createSchema = yup.object({
 	crimeDate: yup.date().required('Campo obrigatório'),
 });
 
-const OpenCriminalCase = ({ id }) => {
-	const crimeId = id
+const OpenCriminalCaseForm = ({ id }) => {
 	const [crimeSuspect, setCrimeSuspect] = useState("")
 	const [crimeType, setCrimeType] = useState("")
 	const [crimeLocation, setCrimeLocation] = useState("")
@@ -31,14 +30,7 @@ const OpenCriminalCase = ({ id }) => {
 		await createOpenCriminalCase(data)
 	}
 
-	const editCrime = () => {
-	}
-
-	const deleteCrime = () => {
-
-	}
-
-	const resetForm = () => {
+	const handleReset = () => {
 		setFormErrors([])
 		setCrimeSuspect("")
 		setCrimeType("")
@@ -46,7 +38,7 @@ const OpenCriminalCase = ({ id }) => {
 		setCrimeDate(null)
 	}
 
-	const submit = async (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		setFormErrors([])
 		const data = setData()
@@ -76,7 +68,7 @@ const OpenCriminalCase = ({ id }) => {
 
 	return (
 		<>
-			<form className="d-flex flex-column form-group gap-3" onSubmit={submit}>
+			<form className="d-flex flex-column form-group gap-3" onSubmit={handleSubmit}>
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
@@ -126,7 +118,7 @@ const OpenCriminalCase = ({ id }) => {
 						</div>
 						:
 						<div className="d-flex flex-row justify-content-between">
-							<input className="btn btn-info" onClick={resetForm} type="reset" value="Limpar" />
+							<input className="btn btn-info" onClick={handleReset} type="reset" value="Limpar" />
 							<input className="btn btn-success" type="submit" value="Enviar" />
 						</div>
 				}
@@ -135,4 +127,4 @@ const OpenCriminalCase = ({ id }) => {
 	)
 }
 
-export default OpenCriminalCase;
+export default OpenCriminalCaseForm;
