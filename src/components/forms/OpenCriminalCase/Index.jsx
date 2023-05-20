@@ -27,6 +27,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
+		console.log(form)
 		setFormErrors([])
 		try {
 			const validation = await createSchema.validate(form
@@ -53,8 +54,8 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="suspeito">Principal suspeito: </label>
-						<input className="form-control" onChange={handleChange} type="text" />
+						<label className="form-label" htmlFor="crimeSuspect">Principal suspeito: </label>
+						<input className="form-control" onChange={handleChange} type="text" name="crimeSuspect" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeSuspect}</p>
@@ -63,8 +64,8 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="tipoCrime">Tipo de crime: </label>
-						<input className="form-control" onChange={handleChange} type="text" />
+						<label className="form-label" htmlFor="crimeType">Tipo de crime: </label>
+						<input className="form-control" onChange={handleChange} type="text" name="crimeType" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeType}</p>
@@ -73,8 +74,8 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="localCrime">Local do crime: </label>
-						<input className="form-control" onChange={handleChange} type="text" />
+						<label className="form-label" htmlFor="crimeLocation">Local do crime: </label>
+						<input className="form-control" onChange={handleChange} type="text" name="crimeLocation" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeLocation}</p>
@@ -83,8 +84,8 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
-						<label className="form-label" htmlFor="data">Data: </label>
-						<input className="form-control" onChange={handleChange} type="datetime-local" />
+						<label className="form-label" htmlFor="crimeDate">Data: </label>
+						<input className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeDate}</p>
