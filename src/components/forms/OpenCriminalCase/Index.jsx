@@ -1,5 +1,6 @@
 import { useState } from "react"
 import * as yup from 'yup';
+import { createOpenCriminalCase as create, updateOpenCriminalCase as update } from "../../../api/OpenCriminalCaseApi"
 
 const createSchema = yup.object({
 	crimeSuspect: yup.string().required('Campo obrigatório'),
@@ -40,11 +41,18 @@ const OpenCriminalCaseForm = ({ id }) => {
 			})
 		}
 	}
-	
+
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		console.log(form)
-		setFormErrors([])
+		await handleValidation(form)
+		if (Object.keys(formErrors) == 0) {
+			if (id)
+				update(id, form)
+			else
+				create(form)
+			window.location.assign("/crimes")
+		}
 	}
 
 	return (
