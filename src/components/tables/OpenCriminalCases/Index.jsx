@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
+import { deleteOpenCriminalCase, getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
 
 const OpenCriminalCasesTable = () => {
 	const [criminalCases, setCriminalCases] = useState([]);
@@ -22,6 +22,7 @@ const OpenCriminalCasesTable = () => {
 						<th>Tipo do crime</th>
 						<th>Local do crime</th>
 						<th>Data do crime</th>
+						<th>Operação</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +34,9 @@ const OpenCriminalCasesTable = () => {
 								<td>{criminalCase.crime_type}</td>
 								<td>{criminalCase.crime_location}</td>
 								<td>{criminalCase.date}</td>
+								<td>
+									<button onClick={deleteOpenCriminalCase(criminalCase.id)}>Excluir</button>
+								</td>
 							</tr>
 						)
 					})}
