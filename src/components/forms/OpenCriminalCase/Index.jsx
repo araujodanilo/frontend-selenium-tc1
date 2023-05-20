@@ -15,6 +15,8 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	const handleChange = (e) => { setForm(values => ({ ...values, [e.target.name]: e.target.value })) }
 
+	const handleCancel = () => { window.location.assign("/crimes") }
+
 	const registerCrime = async (data) => {
 		await createOpenCriminalCase(data)
 	}
@@ -92,7 +94,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				{
 					(id) ?
 						<div className="d-flex flex-row justify-content-between">
-							<input className="btn btn-danger" type="submit" value="Apagar" />
+							<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
 							<input className="btn btn-warning" type="submit" value="Atualizar" />
 						</div>
 						:
