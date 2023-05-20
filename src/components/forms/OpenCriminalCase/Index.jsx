@@ -12,6 +12,13 @@ const OpenCriminalCaseForm = ({ id }) => {
 	const [form, setForm] = useState({})
 	const [formErrors, setFormErrors] = useState("")
 
+	const createSchema = yup.object({
+		crimeSuspect: yup.string().required('Campo obrigatório'),
+		crimeType: yup.string().required('Campo obrigatório'),
+		crimeLocation: yup.string().required('Campo obrigatório'),
+		crimeDate: yup.string().required('Campo obrigatório'),
+	});
+
 	const handleChange = (e) => { setForm(values => ({ ...values, [e.target.name]: e.target.value })) }
 
 	const handleCancel = () => { window.location.assign("/crimes") }
