@@ -6,7 +6,7 @@ const createSchema = yup.object({
 	crimeSuspect: yup.string().required('Campo obrigatório'),
 	crimeType: yup.string().required('Campo obrigatório'),
 	crimeLocation: yup.string().required('Campo obrigatório'),
-	crimeDate: yup.date().required('Campo obrigatório'),
+	crimeDate: yup.string().required('Campo obrigatório'),
 });
 
 const OpenCriminalCaseForm = ({ id }) => {
