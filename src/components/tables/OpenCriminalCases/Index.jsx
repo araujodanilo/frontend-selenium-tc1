@@ -13,6 +13,10 @@ const OpenCriminalCasesTable = () => {
 		window.location.reload()
 	}
 
+	const handleEdit = (id) => {
+		window.location.assign(`/crimes/edit/${id}`)
+	}
+
 	useEffect(() => {
 		loadingData()
 	}, []);
@@ -40,6 +44,7 @@ const OpenCriminalCasesTable = () => {
 								<td>{criminalCase.crimeLocation}</td>
 								<td>{criminalCase.crimeDate}</td>
 								<td>
+									<button onClick={() => { handleEdit(criminalCase.id) }}>Editar</button>
 									<button onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
 								</td>
 
