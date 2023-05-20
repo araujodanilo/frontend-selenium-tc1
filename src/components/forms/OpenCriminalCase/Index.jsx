@@ -99,8 +99,11 @@ const OpenCriminalCaseForm = ({ id }) => {
 						</div>
 						:
 						<div className="d-flex flex-row justify-content-between">
-							<input className="btn btn-info" onClick={handleReset} type="reset" value="Limpar" />
-							<input className="btn btn-success" type="submit" value="Enviar" />
+							<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
+							<div className="gap-2 d-flex">
+								<input className="btn btn-info" onClick={handleReset} type="reset" value="Limpar" />
+								<input className="btn btn-success" type="submit" value="Enviar" />
+							</div>
 						</div>
 				}
 			</form>
