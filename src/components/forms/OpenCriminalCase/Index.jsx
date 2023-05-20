@@ -49,7 +49,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	return (
 		<>
-			<form className="d-flex flex-column form-group gap-3" onSubmit={handleSubmit}>
+			<form className="d-flex flex-column form-group gap-3" onSubmit={handleSubmit} onReset={handleReset}>
 
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
@@ -101,7 +101,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 						<div className="d-flex flex-row justify-content-between">
 							<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
 							<div className="gap-2 d-flex">
-								<input className="btn btn-info" onClick={handleReset} type="reset" value="Limpar" />
+								<input className="btn btn-info" type="reset" value="Limpar" />
 								<input className="btn btn-success" type="submit" value="Enviar" />
 							</div>
 						</div>
