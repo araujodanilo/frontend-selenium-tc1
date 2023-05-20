@@ -25,6 +25,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	const handleReset = () => {
 		setForm({})
+		setFormErrors({})
 	}
 
 	const handleSubmit = async (e) => {
