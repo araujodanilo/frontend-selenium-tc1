@@ -2,14 +2,7 @@ import { useEffect, useState } from "react"
 import * as yup from 'yup';
 import { createOpenCriminalCase as create, updateOpenCriminalCase as update, getOneOpenCriminalCase as findOneCrime } from "../../../api/OpenCriminalCaseApi"
 
-const createSchema = yup.object({
-	crimeSuspect: yup.string().required('Campo obrigatório'),
-	crimeType: yup.string().required('Campo obrigatório'),
-	crimeLocation: yup.string().required('Campo obrigatório'),
-	crimeDate: yup.string().required('Campo obrigatório'),
-});
-
-const OpenCriminalCaseForm = ({ id }) => {
+const OpenCriminalCaseForm = (id) => {
 	const [form, setForm] = useState({})
 	const [formErrors, setFormErrors] = useState("")
 
@@ -58,7 +51,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 	useEffect(() => {
 		if (id)
 			findOneCrime(id, setForm)
-	}, [])
+	}, [id])
 
 	return (
 		<>
