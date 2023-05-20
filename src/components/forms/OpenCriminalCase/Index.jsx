@@ -28,6 +28,19 @@ const OpenCriminalCaseForm = ({ id }) => {
 		setFormErrors({})
 	}
 
+	const handleValidation = async () => {
+		setFormErrors({})
+		try {
+			await createSchema.validate(form, {
+				abortEarly: false,
+			});
+		} catch (err) {
+			err.inner.forEach(e => {
+				setFormErrors(values => ({ ...values, [e.path]: e.message }))
+			})
+		}
+	}
+	
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		console.log(form)
