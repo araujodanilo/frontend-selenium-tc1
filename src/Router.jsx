@@ -22,6 +22,10 @@ const Router = createBrowserRouter([
 			path: "register",
 			element: <RegisterOpenCriminalCase />
 		},
+		{
+			path: "edit/:id",
+			element: <RegisterOpenCriminalCase /> // Usando mesma página para editar. 
+		}
 		]
 	}
 ])
