@@ -22,38 +22,42 @@ const OpenCriminalCasesTable = () => {
 	}, []);
 
 	return (
-		<>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Principal suspeito</th>
-						<th>Tipo do crime</th>
-						<th>Local do crime</th>
-						<th>Data do crime</th>
-						<th>Operação</th>
-					</tr>
-				</thead>
-				<tbody>
-					{criminalCases.map((criminalCase) => {
-						return (
-							<tr key={criminalCase.id}>
-								<td>{criminalCase.id}</td>
-								<td>{criminalCase.crimeSuspect}</td>
-								<td>{criminalCase.crimeType}</td>
-								<td>{criminalCase.crimeLocation}</td>
-								<td>{criminalCase.crimeDate}</td>
-								<td>
-									<button onClick={() => { handleEdit(criminalCase.id) }}>Editar</button>
-									<button onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
-								</td>
+		<div className="m-3"> { /* tag container esta em conflito com o do index css */}
+			<div className="table-responsive m-2 d-flex text-center justify-content-center align-items-center">
+				<table className="table table-light table-striped table-hover table-bordered table-sm align-middle">
+					<thead className="table-dark align-middle">
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Principal suspeito</th>
+							<th scope="col">Tipo do crime</th>
+							<th scope="col">Local do crime</th>
+							<th scope="col">Data do crime</th>
+							<th scope="col">Operação</th>
+						</tr>
+					</thead>
+					<tbody>
+						{criminalCases.map((criminalCase) => {
+							return (
+								<tr key={criminalCase.id}>
+									<td scope="row">{criminalCase.id}</td>
+									<td>{criminalCase.crimeSuspect}</td>
+									<td>{criminalCase.crimeType}</td>
+									<td>{criminalCase.crimeLocation}</td>
+									<td>{criminalCase.crimeDate}</td>
+									<td>
+										<div className="d-flex gap-2 justify-content-center">
+											<button className="btn btn-warning" onClick={() => { handleEdit(criminalCase.id) }}>Editar</button>
+											<button className="btn btn-danger" onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
+										</div>
+									</td>
 
-							</tr>
-						)
-					})}
-				</tbody>
-			</table>
-		</>
+								</tr>
+							)
+						})}
+					</tbody>
+				</table>
+			</div>
+		</div>
 	);
 }
 
