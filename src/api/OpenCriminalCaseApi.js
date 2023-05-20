@@ -10,11 +10,11 @@ export const getAllOpenCriminalCase = async (setData) => {
 		})
 }
 
-export const getOneOpenCriminalCase = async (id) => {
+export const getOneOpenCriminalCase = async (id, setData) => {
 	fetch(`${baseUrl}/${id}`, { method: "GET" })
 		.then(async response => {
 			const data = (await response.json())
-			return data
+			setData(data)
 		})
 }
 
