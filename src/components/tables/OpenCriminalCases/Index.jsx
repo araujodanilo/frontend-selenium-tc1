@@ -29,10 +29,10 @@ const OpenCriminalCasesTable = () => {
 						return (
 							<tr key={criminalCase.id}>
 								<td>{criminalCase.id}</td>
-								<td>{criminalCase.main_suspect}</td>
-								<td>{criminalCase.crime_type}</td>
-								<td>{criminalCase.crime_location}</td>
-								<td>{criminalCase.date}</td>
+								<td>{criminalCase.crimeSuspect}</td>
+								<td>{criminalCase.crimeType}</td>
+								<td>{criminalCase.crimeLocation}</td>
+								<td>{criminalCase.crimeDate}</td>
 							</tr>
 						)
 					})}
