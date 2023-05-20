@@ -60,7 +60,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="crimeSuspect">Principal suspeito: </label>
-						<input className="form-control" onChange={handleChange} type="text" name="crimeSuspect" />
+						<input value={(id && Object.keys(form) != 0) ? form.crimeSuspect : ''} className="form-control" onChange={handleChange} type="text" name="crimeSuspect" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeSuspect}</p>
@@ -70,7 +70,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="crimeType">Tipo de crime: </label>
-						<input className="form-control" onChange={handleChange} type="text" name="crimeType" />
+						<input value={(id && Object.keys(form) != 0) ? form.crimeType : ''} className="form-control" onChange={handleChange} type="text" name="crimeType" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeType}</p>
@@ -80,7 +80,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="crimeLocation">Local do crime: </label>
-						<input className="form-control" onChange={handleChange} type="text" name="crimeLocation" />
+						<input value={(id && Object.keys(form) != 0) ? form.crimeLocation : ''} className="form-control" onChange={handleChange} type="text" name="crimeLocation" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeLocation}</p>
@@ -90,7 +90,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 				<div className="d-flex flex-column">
 					<div className="d-flex flex-row">
 						<label className="form-label" htmlFor="crimeDate">Data: </label>
-						<input className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
+						<input value={(id && Object.keys(form) != 0) ? form.crimeDate : ''} className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
 					</div>
 					<div className="text-center text-danger">
 						<p>{formErrors.crimeDate}</p>
