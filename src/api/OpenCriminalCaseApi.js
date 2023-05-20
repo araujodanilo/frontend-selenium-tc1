@@ -1,7 +1,7 @@
 const baseUrl = "http://localhost:3000/api/crimes"
 
 
-export const getAllOpenCriminalCase = async (setData) => {
+export const findAllOpenCriminalCase = async (setData) => {
 	await fetch(`${baseUrl}`, { method: "GET" })
 		.then(async response => {
 			console.log(response)
@@ -12,7 +12,7 @@ export const getAllOpenCriminalCase = async (setData) => {
 		})
 }
 
-export const getOneOpenCriminalCase = async (id, setData) => {
+export const findOneOpenCriminalCase = async (id, setData) => {
 	fetch(`${baseUrl}/${id}`, { method: "GET" })
 		.then(async response => {
 			console.log(response)

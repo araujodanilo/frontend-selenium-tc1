@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { deleteOpenCriminalCase as deleteCrime, getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
+import { deleteOpenCriminalCase as deleteCrime, findAllOpenCriminalCase as findAll } from "../../../api/OpenCriminalCaseApi"
 
 const OpenCriminalCasesTable = () => {
 	const [criminalCases, setCriminalCases] = useState([]);
 
 	const loadingData = async () => {
-		getAllOpenCriminalCase(setCriminalCases)
+		findAll(setCriminalCases)
 	}
 
 	const handleDelete = (id) => {
