@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
+import { deleteOpenCriminalCase as deleteCrime, getAllOpenCriminalCase } from "../../../api/OpenCriminalCaseApi"
 
 const OpenCriminalCasesTable = () => {
 	const [criminalCases, setCriminalCases] = useState([]);
 
 	const loadingData = async () => {
 		getAllOpenCriminalCase(setCriminalCases)
+	}
+
+	const handleDelete = (id) => {
+		deleteCrime(id)
+		window.location.reload()
 	}
 
 	useEffect(() => {
@@ -22,6 +27,7 @@ const OpenCriminalCasesTable = () => {
 						<th>Tipo do crime</th>
 						<th>Local do crime</th>
 						<th>Data do crime</th>
+						<th>Operação</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +39,10 @@ const OpenCriminalCasesTable = () => {
 								<td>{criminalCase.crimeType}</td>
 								<td>{criminalCase.crimeLocation}</td>
 								<td>{criminalCase.crimeDate}</td>
+								<td>
+									<button onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
+								</td>
+
 							</tr>
 						)
 					})}
