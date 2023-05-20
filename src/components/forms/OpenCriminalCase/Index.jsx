@@ -1,6 +1,5 @@
 import { useState } from "react"
 import * as yup from 'yup';
-import { createOpenCriminalCase } from "../../../api/OpenCriminalCaseApi";
 
 const createSchema = yup.object({
 	crimeSuspect: yup.string().required('Campo obrigatório'),
@@ -17,10 +16,6 @@ const OpenCriminalCaseForm = ({ id }) => {
 
 	const handleCancel = () => { window.location.assign("/crimes") }
 
-	const registerCrime = async (data) => {
-		await createOpenCriminalCase(data)
-	}
-
 	const handleReset = () => {
 		setForm({})
 	}
@@ -29,23 +24,6 @@ const OpenCriminalCaseForm = ({ id }) => {
 		e.preventDefault()
 		console.log(form)
 		setFormErrors([])
-		try {
-			const validation = await createSchema.validate(form
-				, { abortEarly: false })
-		}
-		catch (err) {
-			const tempFormErrors = {}
-			err.inner.forEach(
-
-				i => {
-					if (i.path) {
-						tempFormErrors[i.path] = i.message;
-					}
-				})
-			setFormErrors(tempFormErrors)
-			return
-		}
-		await registerCrime(data)
 	}
 
 	return (
