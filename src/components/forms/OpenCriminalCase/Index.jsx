@@ -4,7 +4,7 @@ import { createOpenCriminalCase as create, updateOpenCriminalCase as update, get
 
 const OpenCriminalCaseForm = ({ id }) => {
 	const [form, setForm] = useState({})
-	const [formErrors, setFormErrors] = useState("")
+	const [formErrors, setFormErrors] = useState({})
 
 	const createSchema = yup.object({
 		crimeSuspect: yup.string().required('Campo obrigatório'),
@@ -22,29 +22,29 @@ const OpenCriminalCaseForm = ({ id }) => {
 		setFormErrors({})
 	}
 
-	const handleValidation = async () => {
+	const handleValidation = async (data) => {
 		setFormErrors({})
 		try {
-			await createSchema.validate(form, {
+			await createSchema.validate(data, {
 				abortEarly: false,
 			});
 		} catch (err) {
 			err.inner.forEach(e => {
 				setFormErrors(values => ({ ...values, [e.path]: e.message }))
 			})
+			return false
 		}
+		return true
 	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		console.log(form)
-		await handleValidation(form)
-		if (Object.keys(formErrors) == 0) {
+		if (await handleValidation(form)) {
 			if (id)
 				update(id, form)
 			else
 				create(form)
-			window.location.assign("/crimes")
+				window.location.assign("/crimes")
 		}
 	}
 
