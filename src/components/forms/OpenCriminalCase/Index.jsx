@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import * as yup from 'yup';
-import { createOpenCriminalCase as create, updateOpenCriminalCase as update } from "../../../api/OpenCriminalCaseApi"
+import { createOpenCriminalCase as create, updateOpenCriminalCase as update, getOneOpenCriminalCase as findOneCrime } from "../../../api/OpenCriminalCaseApi"
 
 const createSchema = yup.object({
 	crimeSuspect: yup.string().required('Campo obrigatório'),
@@ -54,6 +54,11 @@ const OpenCriminalCaseForm = ({ id }) => {
 			window.location.assign("/crimes")
 		}
 	}
+
+	useEffect(() => {
+		if (id)
+			findOneCrime(id, setForm)
+	}, [])
 
 	return (
 		<>
