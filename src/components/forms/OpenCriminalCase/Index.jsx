@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import * as yup from 'yup';
 import { createOpenCriminalCase as create, updateOpenCriminalCase as update, getOneOpenCriminalCase as findOneCrime } from "../../../api/OpenCriminalCaseApi"
 
-const OpenCriminalCaseForm = (id) => {
+const OpenCriminalCaseForm = ({ id }) => {
 	const [form, setForm] = useState({})
 	const [formErrors, setFormErrors] = useState("")
 
