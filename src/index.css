@@ -61,3 +61,18 @@
   .purple{
 	color: #535bf2;
   }
+
+.btn{
+	background-color: #535bf2;
+	border-color: black;
+	color: white;
+}
+
+.btn-excluir:hover{
+	background-color: rgb(175, 7, 7);
+}
+
+.btn:hover{
+	background-color:rgb(130, 124, 250);
+}
+

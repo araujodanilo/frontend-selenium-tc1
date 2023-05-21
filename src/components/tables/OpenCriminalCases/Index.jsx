@@ -46,8 +46,8 @@ const OpenCriminalCasesTable = () => {
 									<td>{criminalCase.crimeDate}</td>
 									<td>
 										<div className="d-flex gap-2 justify-content-center">
-											<button className="btn btn-warning" onClick={() => { handleEdit(criminalCase.id) }}>Editar</button>
-											<button className="btn btn-danger" onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
+											<button className="btn btn-editar" onClick={() => { handleEdit(criminalCase.id) }}>Editar</button>
+											<button className="btn btn-excluir" onClick={() => { handleDelete(criminalCase.id) }}>Excluir</button>
 										</div>
 									</td>
 

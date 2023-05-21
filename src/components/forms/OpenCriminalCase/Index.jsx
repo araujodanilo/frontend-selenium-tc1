@@ -67,7 +67,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 	return (
 		<>
 			<div className="p-3">
-				<div className="border border-dark"> {/* container em conflico com o css local */}
+				<div className="border border-dark"> 
 					<form className="d-flex flex-column form-group gap-3 m-3" onSubmit={handleSubmit} onReset={handleReset}>
 
 						<div className="d-flex flex-column">
@@ -113,15 +113,15 @@ const OpenCriminalCaseForm = ({ id }) => {
 						{
 							(id) ?
 								<div className="d-flex flex-row justify-content-between">
-									<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
-									<input className="btn btn-warning" type="submit" value="Atualizar" />
+									<input className="btn" onClick={handleCancel} type="button" value="Cancelar" />
+									<input className="btn" type="submit" value="Atualizar" />
 								</div>
 								:
 								<div className="d-flex flex-row justify-content-between">
-									<input className="btn btn-danger" onClick={handleCancel} type="button" value="Cancelar" />
+									<input className="btn" onClick={handleCancel} type="button" value="Cancelar" />
 									<div className="gap-2 d-flex">
-										<input className="btn btn-info" type="reset" value="Limpar" />
-										<input className="btn btn-success" type="submit" value="Enviar" />
+										<input className="btn" type="reset" value="Limpar" />
+										<input className="btn" type="submit" value="Enviar" />
 									</div>
 								</div>
 						}
