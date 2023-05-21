@@ -6,8 +6,8 @@ const FooterLayout = () => {
 			</a>
 			<br />
 			<br />
-			<p>Contato: csisystem@email.com.br</p>
-			<p>Desenvolvido por: Danilo Araújo, Cauê Gastaldi, Isabela Forti</p>
+			<p><span className="purple">Contato:</span> csisystem@email.com.br</p>
+			<p><span className="purple">Desenvolvido por:</span> Danilo Araújo, Cauê Gastaldi, Isabela Forti</p>
 		</footer>
 	)
 }

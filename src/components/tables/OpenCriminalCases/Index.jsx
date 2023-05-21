@@ -22,7 +22,7 @@ const OpenCriminalCasesTable = () => {
 	}, []);
 
 	return (
-		<div className="m-3"> { /* tag container esta em conflito com o do index css */}
+		<div className="m-3"> 
 			<div className="table-responsive m-2 d-flex text-center justify-content-center align-items-center">
 				<table className="table table-light table-striped table-hover table-bordered table-sm align-middle">
 					<thead className="table-dark align-middle">
