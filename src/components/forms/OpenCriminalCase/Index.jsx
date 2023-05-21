@@ -32,6 +32,15 @@ const OpenCriminalCaseForm = ({ id }) => {
 		setFormErrors({})
 	}
 
+	const handleChangeCrimeDate = (e) => {
+		if(Date.parse(e.target.value) < Date.now()){
+			setForm(values => ({...values, ["crimeDate"]:e.target.value}))
+		}
+		else{
+			setFormErrors(values => ({...values, ["crimeDate"]:"Data selecionada é maior que a data atual!"}))
+		}
+	}
+
 	const handleValidation = async (data) => {
 		setFormErrors({})
 		try {
@@ -103,7 +112,7 @@ const OpenCriminalCaseForm = ({ id }) => {
 						<div className="d-flex flex-column">
 							<div className="d-flex flex-row">
 								<label className="form-label" htmlFor="crimeDate">Data: </label>
-								<input value={form.crimeDate} className="form-control" onChange={handleChange} type="datetime-local" name="crimeDate" />
+								<input value={form.crimeDate} className="form-control" onChange={handleChangeCrimeDate} type="datetime-local" name="crimeDate" />
 							</div>
 							<div className="text-center text-danger">
 								<p>{formErrors.crimeDate}</p>
