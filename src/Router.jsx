@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 //Routes
 import ErrorPage from './ErrorPage';
 import IndexPage from './pages/IndexPage'
-import ListAllOpenCriminalCase from "./pages/ListAllOpenCriminalCase";
+import ListAllOpenCriminalCase from "./pages/ListAllCriminalCases";
 import RegisterOpenCriminalCase from "./pages/RegisterOpenCriminalCasePage";
 
 const Router = createBrowserRouter([
@@ -19,7 +19,7 @@ const Router = createBrowserRouter([
 			element: <ListAllOpenCriminalCase />
 		},
 		{
-			path: "/register",
+			path: "register",
 			element: <RegisterOpenCriminalCase />
 		},
 		{
