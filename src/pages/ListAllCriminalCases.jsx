@@ -1,10 +1,10 @@
-import OpenCriminalCasesTable from "../components/tables/OpenCriminalCases/Index"
+import CriminalCasesTable from "../components/tables/CriminalCases/Index"
 
-const ListAllOpenCriminalCase = () => {
+const ListAllCriminalCases = () => {
 
 	return (
-		<OpenCriminalCasesTable />
+		<CriminalCasesTable />
 	);
 }
 
-export default ListAllOpenCriminalCase;
+export default ListAllCriminalCases;

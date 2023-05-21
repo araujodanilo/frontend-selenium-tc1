@@ -3,8 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 //Routes
 import ErrorPage from './ErrorPage';
 import IndexPage from './pages/IndexPage'
-import ListAllOpenCriminalCase from "./pages/ListAllCriminalCases";
-import RegisterOpenCriminalCase from "./pages/RegisterOpenCriminalCasePage";
+import ListAllCriminalCases from "./pages/ListAllCriminalCases";
+import RegisterCriminalCases from "./pages/RegisterCriminalCasesPage";
 
 const Router = createBrowserRouter([
 	{
@@ -16,15 +16,15 @@ const Router = createBrowserRouter([
 		path: "/crimes",
 		children: [{
 			index: true,
-			element: <ListAllOpenCriminalCase />
+			element: <ListAllCriminalCases />
 		},
 		{
 			path: "register",
-			element: <RegisterOpenCriminalCase />
+			element: <RegisterCriminalCases />
 		},
 		{
 			path: "edit/:id",
-			element: <RegisterOpenCriminalCase /> // Usando mesma página para editar. 
+			element: <RegisterCriminalCases /> // Usando mesma página para editar. 
 		}
 		]
 	}

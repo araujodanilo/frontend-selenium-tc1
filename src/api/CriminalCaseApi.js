@@ -1,7 +1,7 @@
 const baseUrl = "http://localhost:3000/api/crimes"
 
 
-export const findAllOpenCriminalCase = async (setData) => {
+export const findAllCriminalCases = async (setData) => {
 	await fetch(`${baseUrl}`, { method: "GET" })
 		.then(async response => {
 			console.log(response)
@@ -12,7 +12,7 @@ export const findAllOpenCriminalCase = async (setData) => {
 		})
 }
 
-export const findOneOpenCriminalCase = async (id, setData) => {
+export const findOneCriminalCase = async (id, setData) => {
 	fetch(`${baseUrl}/${id}`, { method: "GET" })
 		.then(async response => {
 			console.log(response)
@@ -23,7 +23,7 @@ export const findOneOpenCriminalCase = async (id, setData) => {
 		})
 }
 
-export const createOpenCriminalCase = async (data) => {
+export const createCriminalCase = async (data) => {
 	fetch(`${baseUrl}`,
 		{
 			method: "POST",
@@ -36,7 +36,7 @@ export const createOpenCriminalCase = async (data) => {
 		})
 }
 
-export const updateOpenCriminalCase = async (id, data) => {
+export const updateCriminalCase = async (id, data) => {
 	fetch(`${baseUrl}/${id}`,
 		{
 			method: "PATCH",
@@ -49,7 +49,7 @@ export const updateOpenCriminalCase = async (id, data) => {
 		})
 }
 
-export const deleteOpenCriminalCase = async (id) => {
+export const deleteCriminalCases = async (id) => {
 	fetch(`${baseUrl}/${id}`,
 		{
 			method: "DELETE",

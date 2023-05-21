@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import * as yup from 'yup';
-import { createOpenCriminalCase as create, updateOpenCriminalCase as update, findOneOpenCriminalCase as findOneCrime } from "../../../api/OpenCriminalCaseApi"
+import { createCriminalCase as create, updateCriminalCase as update, findOneCriminalCase as findOneCrime } from "../../../api/CriminalCaseApi"
 
-const OpenCriminalCaseForm = ({ id }) => {
+const CriminalCasesForm = ({ id }) => {
 	const [form, setForm] = useState({
 		crimeSuspect: '',
 		crimeType: '',
@@ -141,4 +141,4 @@ const OpenCriminalCaseForm = ({ id }) => {
 	)
 }
 
-export default OpenCriminalCaseForm;
+export default CriminalCasesForm;

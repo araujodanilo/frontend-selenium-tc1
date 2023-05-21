@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { deleteOpenCriminalCase as deleteCrime, findAllOpenCriminalCase as findAll } from "../../../api/OpenCriminalCaseApi"
+import { deleteCriminalCases as deleteCrime, findAllCriminalCases as findAll } from "../../../api/CriminalCaseApi"
 
-const OpenCriminalCasesTable = () => {
+const CriminalCasesTable = () => {
 	const [criminalCases, setCriminalCases] = useState([]);
 
 	const loadingData = async () => {
@@ -61,4 +61,4 @@ const OpenCriminalCasesTable = () => {
 	);
 }
 
-export default OpenCriminalCasesTable;
+export default CriminalCasesTable;
