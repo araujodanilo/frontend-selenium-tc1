@@ -11,13 +11,13 @@ const IndexPage = () => {
 				<div className="container-faded d-flex align-items-center justify-content-center">
 					<img src="/imgs/board.jpg" alt="Foto de braço de pessoa apontando para quadro com informações de um crime." className="image img-thumbnail border-dark" />
 					<div className="middle">
-						<div className="text"><a href='/crimes'>Visualizar registros</a></div>
+						<div className="text rounded"><a className="a-home" href='/crimes'>Visualizar registros</a></div>
 					</div>
 				</div>
 				<div className="container-faded d-flex align-items-center justify-content-center">
 					<img src="/imgs/typing.jpg" alt="Foto de braço de pessoa digitando em notebook." className="image img-thumbnail border-dark" />
 					<div className="middle">
-						<div className="text"><a href='/crimes/register'>Cadastrar</a></div>
+						<div className="text rounded"><a className="a-home" href='/crimes/register'>Cadastrar</a></div>
 					</div>
 				</div>
 

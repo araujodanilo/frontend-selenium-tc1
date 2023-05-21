@@ -19,7 +19,7 @@ const Router = createBrowserRouter([
 			element: <ListAllOpenCriminalCase />
 		},
 		{
-			path: "register",
+			path: "/register",
 			element: <RegisterOpenCriminalCase />
 		},
 		{
