@@ -3,22 +3,26 @@ import '../index.css'
 const IndexPage = () => {
 	return (
 		<>
-			<div className="p-3 mb-2 bg-secondary text-white">
-				<h1 className="ms-3">Bem vindo</h1>
+			<div className="p-3 mb-2 bg-secondary text-white font-link">
+				<h1 className="ms-3 text-center">Bem-vindo (a),</h1>
 
-				<p className="ms-3">Este é um site que possui como finalidade mostrar registros criminais em aberto</p>
-				<div className="container">
-					<img src="/imgs/board.jpg" alt="Avatar" className="img-button image img-thumbnail border-dark" />
+				<p className="m-4 fs-5 text-center">CSI SYSTEM é um sistema FICTÍCIO para gerenciamento de registros criminais que tem como finalidade auxiliar policiais e outros profissionais da área de segurança a pesquisarem por informações relevantes sobre determinados crimes inventados. Esse site foi desenvolvido como exercício para a disciplina de Tópicos em Computação I do Instituto Federal de São Paulo para a prática de testes de software.</p>
+				<div className="d-flex">
+				<div className="container-faded d-flex align-items-center justify-content-center">
+					<img src="/imgs/board.jpg" alt="Avatar" className="image img-thumbnail border-dark" />
 					<div className="middle">
-						<div className="text">Visualizar registros</div>
+						<div className="text"><a href='/crimes'>Visualizar registros</a></div>
 					</div>
 				</div>
-				<div className="container">
-					<img src="/imgs/typing.jpg" alt="Avatar" className="img-button image img-thumbnail border-dark" />
+				<div className="container-faded d-flex align-items-center justify-content-center">
+					<img src="/imgs/typing.jpg" alt="Avatar" className="image img-thumbnail border-dark" />
 					<div className="middle">
-						<div className="text">Cadastrar</div>
+						<div className="text"><a href='/crimes/register'>Cadastrar</a></div>
 					</div>
 				</div>
+
+				</div>
+				
 
 			</div>
 		</>
