@@ -1,0 +1,3 @@
+[submodule "Csi-System-Selenium-Tests"]
+	path = Csi-System-Selenium-Tests
+	url = https://github.com/vinicius-ricardoADS/Csi-System-Selenium-Tests
